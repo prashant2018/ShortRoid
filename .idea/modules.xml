@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ShortRoidLib.iml" filepath="$PROJECT_DIR$/ShortRoidLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shortroid/shortroid.iml" filepath="$PROJECT_DIR$/shortroid/shortroid.iml" />
+    </modules>
+  </component>
+</project>
