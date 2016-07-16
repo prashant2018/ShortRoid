@@ -13,7 +13,7 @@ Following is the documentation for the library. It will be modified as more clas
 An SqlLite library for integrating databases in applications.
 
 ##Usage Example
-
+```
 //Attributes are the columns in database table
 HashMap<String,String> attributes = new HashMap<>();
 
@@ -25,8 +25,10 @@ attributes.put("NAME","TEXT");
 // Creating database and table. It only takes one line of code
 ShortRoidDB shortdb = new ShortRoidDB(MainActivity.this,DATABASE_NAME,1,TABLE_NAME,attributes);
 
-// Inserting data - insert()
+```
 
+// Inserting data - insert()
+```
 HashMap<String,String> attributes = new HashMap<>();
 
 data.put("KEY",1);
@@ -36,14 +38,23 @@ shortdb.insert(data);
 data.put("KEY",2);
 data.put("NAME","Mohit");
 shortdb.insert(data);
-
+```
 // Query data - query()
-
-HashMap< Integer,List<String> > list;
+```
+List< HashMap<String,String> > list;
 String q = "SELECT * FROM TABLE_NAME";
 list = shortdb.query(q);
 
-// Row 1 -> list.get(1)
+for(HashMap<String,String> hmap:list){
+
+    // hmap.get("Attribute_Name")
+    // String name = hmap.get("NAME");
+    // String key = hmap.get("KEY");
+
+    s = s+hmap.get("NAME")+" "+hmap.get("KEY")+" \n";
+  }
+  ```
+  
 
 
 
