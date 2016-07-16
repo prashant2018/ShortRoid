@@ -27,7 +27,7 @@ ShortRoidDB shortdb = new ShortRoidDB(MainActivity.this,DATABASE_NAME,1,TABLE_NA
 
 ```
 
-// Inserting data - insert()
+##Inserting data - insert()
 ```
 HashMap<String,String> attributes = new HashMap<>();
 
@@ -39,7 +39,7 @@ data.put("KEY",2);
 data.put("NAME","Mohit");
 shortdb.insert(data);
 ```
-// Query data - query()
+##Query data - query()
 ```
 List< HashMap<String,String> > list;
 String q = "SELECT * FROM TABLE_NAME";
@@ -55,7 +55,7 @@ for(HashMap<String,String> hmap:list){
   }
   ```
   
-## Updating database - anyQuery()
+##Updating database - anyQuery()
 
 ```
 String query = "UPDATE table_name
@@ -65,7 +65,7 @@ String query = "UPDATE table_name
 anyQuery(query)
 ```
 
-## AnyQuery i.e Delete, Update, Alter etc - anyQuery()
+##AnyQuery i.e Delete, Update, Alter etc - anyQuery()
 ```
 String query = "DELETE FROM table_name
                 WHERE [condition];"
