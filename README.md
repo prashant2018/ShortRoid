@@ -69,7 +69,7 @@ anyQuery(query)
 ```
 String query = "DELETE FROM table_name
                 WHERE [condition];"
-anyQuery(query);
+shortdb.anyQuery(query);
 
 ```
 
