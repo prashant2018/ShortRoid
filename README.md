@@ -53,8 +53,8 @@ for(HashMap<String,String> hmap:list){
 
     s = s+hmap.get("NAME")+" "+hmap.get("KEY")+" \n";
   }
-  ```
-  
+```
+ 
 ##Updating database - anyQuery()
 
 ```
@@ -71,6 +71,22 @@ String query = "DELETE FROM table_name
                 WHERE [condition];"
 shortdb.anyQuery(query);
 
+```
+
+##ShortRoidPreferences
+
+A library to integrate SharedPreferences easily.
+
+##Usage
+
+```java 
+ShortRoidPreferences shortRoidPreferences=new ShortRoidPreferences(context);
+
+//Use Set methods to put values (key,value)
+ shortRoidPreferences.setPrefString("Example","JustTesting");
+ 
+//Use Get methods to get values (key) 
+ shortRoidPreferences.getPrefString("Example");
 ```
 
 
