@@ -55,7 +55,23 @@ for(HashMap<String,String> hmap:list){
   }
   ```
   
+## Updating database - anyQuery()
 
+```
+String query = "UPDATE table_name
+                SET column1 = value1, column2 = value2...., columnN = valueN
+                WHERE [condition];"
+                
+anyQuery(query)
+```
+
+## AnyQuery i.e Delete, Update, Alter etc - anyQuery()
+```
+String query = "DELETE FROM table_name
+                WHERE [condition];"
+anyQuery(query);
+
+```
 
 
 
