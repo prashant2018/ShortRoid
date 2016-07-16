@@ -29,7 +29,7 @@ ShortRoidDB shortdb = new ShortRoidDB(MainActivity.this,DATABASE_NAME,1,TABLE_NA
 
 ##Inserting data - insert()
 ```
-HashMap<String,String> attributes = new HashMap<>();
+HashMap<String,String> data = new HashMap<>();
 
 data.put("KEY",1);
 data.put("NAME","Prashant");
