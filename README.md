@@ -97,5 +97,6 @@ ShortRoidPreferences shortRoidPreferences=new ShortRoidPreferences(context);
 ```
 
 #Developed By
-Prashant Kumar - https://github.com/prashant2018/
+Prashant Kumar - https://github.com/prashant2018/ 
+
 Mohit Badwal - https://github.com/mohitbadwal/
