@@ -159,7 +159,61 @@ public class ShortRoidDB extends SQLiteOpenHelper {
 
 
     // Query method which returns HashMap<row_num,List of columns>
-    public HashMap<Integer,List<String>> query(String query) {
+    public List<HashMap<String,String>> query(String query) {
+
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        int i,k=0;
+        int column_count;
+        int row_count = cursor.getCount();
+        Log.v("rc", String.valueOf(row_count));
+
+        @SuppressWarnings("unchecked")
+        List<HashMap<String,String>> map = new ArrayList<>();
+        HashMap<String,String> tmap;
+        if (cursor.moveToFirst()) {
+            do {
+                tmap = new HashMap<>();
+                column_count = cursor.getColumnCount();
+
+                for(i=0;i<column_count;i++) {
+                    try {
+                        tmap.put(cursor.getColumnName(i), cursor.getString(i));
+                    } catch (Exception e) {
+                        Log.v("cool", e.toString());
+                    }
+                }
+                map.add(tmap);
+            } while (cursor.moveToNext());
+
+        }
+        Log.v("map",map.toString());
+        return map;
+    }
+
+
+        public boolean anyQuery(String query){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            Cursor c = db.rawQuery(query, null);
+            c.moveToFirst();
+            c.close();
+            return true;
+        }
+        catch (SQLiteAbortException e){
+            Log.e("Update",e.toString());
+            return false;
+        }
+
+
+    }
+
+}
+
+/*
+public HashMap<Integer,List<String>> query(String query) {
 
         HashMap<Integer,List<String>> map = new HashMap<Integer,List<String>>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -184,24 +238,4 @@ public class ShortRoidDB extends SQLiteOpenHelper {
 
         return map;
     }
-
-
-    // Queries like update, delete, alter
-    public boolean anyQuery(String query){
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        try {
-            Cursor c = db.rawQuery(query, null);
-            c.moveToFirst();
-            c.close();
-            return true;
-        }
-        catch (SQLiteAbortException e){
-            Log.e("Update",e.toString());
-            return false;
-        }
-
-    }
-
-}
-
+ */

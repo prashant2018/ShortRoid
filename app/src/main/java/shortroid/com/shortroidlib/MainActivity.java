@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import shortroid.com.shortroid.ShortRoidDB.ShortRoidDB;
-import shortroid.com.shortroid.ShortRoidPreferences.FileNameException;
 import shortroid.com.shortroid.ShortRoidPreferences.ShortRoidPreferences;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,14 +16,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        /*
         try {
             shortRoidPreferences=new ShortRoidPreferences(this,"Preferences");
         } catch (FileNameException e) {
             e.printStackTrace();
         }
         shortRoidPreferences.setPrefString("Example","JustTesting");
-        Log.d("TAG",shortRoidPreferences.getPrefString("Example"));
+        Log.d("TAG",shortRoidPreferences.getPrefString("Example"));*/
+
         HashMap<String,String> attributes = new HashMap<>();
         HashMap<String,Object> data = new HashMap<>();
 
@@ -32,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         attributes.put("NAME","TEXT");
         ShortRoidDB sdb = new ShortRoidDB(MainActivity.this,"DATABASE_NAME",4,"TABLE_TEST",attributes);
 
-
+        String update = "UPDATE TABLE_TEST SET KEY = 191 WHERE NAME=\"Rishabh\" ";
+        System.out.println(sdb.anyQuery(update));
         TextView tv = (TextView)findViewById(R.id.text);
 
         data.put("KEY",32.3);
@@ -43,9 +46,18 @@ public class MainActivity extends AppCompatActivity {
         sdb.insert(data);
         String q = "SELECT * FROM TABLE_TEST";
 
-        HashMap<Integer,List<String>> list;
+        List<HashMap<String,String>> list;
+        Log.v("L","h");
         list = sdb.query(q);
-        System.out.println(list.toString());
-        tv.setText(list.toString());
+        Log.v("no","h");
+        String s="";
+        for(HashMap<String,String> hmap:list){
+            System.out.println(hmap.get("NAME"));
+            s = s+hmap.get("NAME")+" "+hmap.get("KEY")+" \n";
+        }
+
+
+
+        tv.setText(s);
     }
 }
