@@ -2,20 +2,29 @@ package shortroid.com.shortroidlib;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
 
 import shortroid.com.shortroid.ShortRoidDB.ShortRoidDB;
+import shortroid.com.shortroid.ShortRoidPreferences.FileNameException;
+import shortroid.com.shortroid.ShortRoidPreferences.ShortRoidPreferences;
 
 public class MainActivity extends AppCompatActivity {
-
+    ShortRoidPreferences shortRoidPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        try {
+            shortRoidPreferences=new ShortRoidPreferences(this,"Preferences");
+        } catch (FileNameException e) {
+            e.printStackTrace();
+        }
+        shortRoidPreferences.setPrefString("Example","JustTesting");
+        Log.d("TAG",shortRoidPreferences.getPrefString("Example"));
         HashMap<String,String> attributes = new HashMap<>();
         HashMap<String,Object> data = new HashMap<>();
 

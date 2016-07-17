@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteAbortException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
@@ -161,7 +162,7 @@ public class ShortRoidDB extends SQLiteOpenHelper {
     public HashMap<Integer,List<String>> query(String query) {
 
         HashMap<Integer,List<String>> map = new HashMap<Integer,List<String>>();
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         int i,k=0;
         int column_count;
@@ -185,12 +186,21 @@ public class ShortRoidDB extends SQLiteOpenHelper {
     }
 
 
-    public boolean anyQuery(){
+    // Queries like update, delete, alter
+    public boolean anyQuery(String query){
 
         SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            Cursor c = db.rawQuery(query, null);
+            c.moveToFirst();
+            c.close();
+            return true;
+        }
+        catch (SQLiteAbortException e){
+            Log.e("Update",e.toString());
+            return false;
+        }
 
-
-        return false;
     }
 
 }
