@@ -157,6 +157,7 @@ public class ShortRoidDB extends SQLiteOpenHelper {
     }
 
 
+    // Query method which returns HashMap<row_num,List of columns>
     public HashMap<Integer,List<String>> query(String query) {
 
         HashMap<Integer,List<String>> map = new HashMap<Integer,List<String>>();
@@ -183,6 +184,14 @@ public class ShortRoidDB extends SQLiteOpenHelper {
         return map;
     }
 
+
+    public boolean anyQuery(){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+
+        return false;
+    }
 
 }
 
