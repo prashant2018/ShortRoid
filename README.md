@@ -19,15 +19,15 @@ Following is the documentation for the library. It will be modified as more clas
 
 An SqlLite library for integrating databases in applications.
 
-##Usage Example
+##Usage
 ```java
 //Attributes are the columns in database table
 HashMap<String,String> attributes = new HashMap<>();
 
 // Assigning table attributes and their types
 
-attributes.put("KEY",INTEGER);
-attributes.put("NAME","TEXT");
+attributes.put("KEY","INTEGER");
+attributes.put("NAME","TEXT NOT NULL");
 
 // Creating database and table. It only takes one line of code
 ShortRoidDB shortdb = new ShortRoidDB(MainActivity.this,DATABASE_NAME,1,TABLE_NAME,attributes);
@@ -80,7 +80,7 @@ shortdb.anyQuery(query);
 
 ```
 
-##ShortRoidPreferences
+#ShortRoidPreferences
 
 A library to integrate SharedPreferences easily.
 
