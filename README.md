@@ -1,8 +1,15 @@
 # ShortRoid
 ##Android In Short
 
-ShortRoid Library makes it esaier to use different functionalities of android. Main objective is to simplify android code and make the development process faster.
+ShortRoid Library makes it easier to use different functionalities of android. Main objective is to simplify android code and make the development process faster.
 ShortRoid being open source encourages contributers to contribute and make it more fun for the developers to develop android apps using ShortRoid.
+
+##Include ShortRoid 
+Just add the following line to your apps gradle.build dependencies
+
+```java
+compile 'shortroid.shortroid:shortroid:1.0.0'
+```
 
 Following is the documentation for the library. It will be modified as more classess are added.
 
@@ -12,15 +19,15 @@ Following is the documentation for the library. It will be modified as more clas
 
 An SqlLite library for integrating databases in applications.
 
-##Usage Example
-```
+##Usage
+```java
 //Attributes are the columns in database table
 HashMap<String,String> attributes = new HashMap<>();
 
 // Assigning table attributes and their types
 
-attributes.put("KEY",INTEGER);
-attributes.put("NAME","TEXT");
+attributes.put("KEY","INTEGER");
+attributes.put("NAME","TEXT NOT NULL");
 
 // Creating database and table. It only takes one line of code
 ShortRoidDB shortdb = new ShortRoidDB(MainActivity.this,DATABASE_NAME,1,TABLE_NAME,attributes);
@@ -28,7 +35,7 @@ ShortRoidDB shortdb = new ShortRoidDB(MainActivity.this,DATABASE_NAME,1,TABLE_NA
 ```
 
 ##Inserting data - insert()
-```
+```java
 HashMap<String,String> data = new HashMap<>();
 
 data.put("KEY",1);
@@ -40,7 +47,7 @@ data.put("NAME","Mohit");
 shortdb.insert(data);
 ```
 ##Query data - query()
-```
+```java
 List< HashMap<String,String> > list;
 String q = "SELECT * FROM TABLE_NAME";
 list = shortdb.query(q);
@@ -57,7 +64,7 @@ for(HashMap<String,String> hmap:list){
  
 ##Updating database - anyQuery()
 
-```
+```java
 String query = "UPDATE table_name
                 SET column1 = value1, column2 = value2...., columnN = valueN
                 WHERE [condition];"
@@ -66,14 +73,14 @@ shortdb.anyQuery(query)
 ```
 
 ##AnyQuery i.e Delete, Update, Alter etc - anyQuery()
-```
+```java
 String query = "DELETE FROM table_name
                 WHERE [condition];"
 shortdb.anyQuery(query);
 
 ```
 
-##ShortRoidPreferences
+#ShortRoidPreferences
 
 A library to integrate SharedPreferences easily.
 
@@ -89,5 +96,7 @@ ShortRoidPreferences shortRoidPreferences=new ShortRoidPreferences(context);
  shortRoidPreferences.getPrefString("Example");
 ```
 
+#Developed By
+Prashant Kumar - https://github.com/prashant2018/ 
 
-
+Mohit Badwal - https://github.com/mohitbadwal/
