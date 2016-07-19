@@ -2,14 +2,9 @@ package shortroid.com.shortroidlib;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.TextView;
+import android.view.View;
 
-import java.util.HashMap;
-import java.util.List;
-
-import shortroid.com.shortroid.ShortRoidDB.ShortRoidDB;
-import shortroid.com.shortroid.ShortRoidPreferences.FileNameException;
+import shortroid.com.shortroid.ShortIntent.ShortIntent;
 import shortroid.com.shortroid.ShortRoidPreferences.ShortRoidPreferences;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+
+
+        /*
         try {
             shortRoidPreferences=new ShortRoidPreferences(this,"Preferences");
         } catch (FileNameException e) {
@@ -28,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         shortRoidPreferences.setPrefString("Example","JustTesting");
         Log.d("TAG",shortRoidPreferences.getPrefString("Example"));
 
+
         HashMap<String,String> attributes = new HashMap<>();
+
         HashMap<String,Object> data = new HashMap<>();
 
         attributes.put("KEY","TEXT");
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(sdb.anyQuery(update));
         TextView tv = (TextView)findViewById(R.id.text);
 
-        data.put("KEY",32.3);
+        data.put("KEY",32);
         data.put("NAME","Saurabh");
         sdb.insert(data);
         data.put("KEY",41);
@@ -60,5 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         tv.setText(s);
+    */
     }
+public void funct(View v){
+
+    ShortIntent si = new ShortIntent(this);
+    si.message("8984511995","hello");
+    //si.call("8984511995");
+}
 }
