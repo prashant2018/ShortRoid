@@ -44,6 +44,32 @@ public class ShortIntent {
 
     }
 
+    // email
+    public void email(String to,String sub, String body){
+        intent = new Intent(Intent.ACTION_SEND);
+
+        intent.setData(Uri.parse("mailto:"));
+        intent.setType("message/rfc822");
+        intent.putExtra(Intent.EXTRA_EMAIL, to);
+        intent.putExtra(Intent.EXTRA_SUBJECT, sub);
+        intent.putExtra(Intent.EXTRA_TEXT,body);
+
+        _context.startActivity(Intent.createChooser(intent, "Send mail..."));
+
+    }
+
+    public void email(String to,String sub, String body,String cc){
+        intent = new Intent(Intent.ACTION_SEND);
+
+        intent.setData(Uri.parse("mailto:"));
+        intent.setType("message/rfc822");
+        intent.putExtra(Intent.EXTRA_EMAIL, to);
+        intent.putExtra(Intent.EXTRA_CC, cc);
+        intent.putExtra(Intent.EXTRA_SUBJECT, sub);
+        intent.putExtra(Intent.EXTRA_TEXT,body);
+        _context.startActivity(Intent.createChooser(intent, "Send mail..."));
+    }
+
 
 
 }
