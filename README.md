@@ -15,7 +15,7 @@ Following is the documentation for the library. It will be modified as more clas
 
 ##Documentation
 
-##ShortroidDB
+#ShortroidDB
 
 An SqlLite library for integrating databases in applications.
 
