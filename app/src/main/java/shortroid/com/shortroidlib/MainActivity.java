@@ -66,7 +66,9 @@ public void funct(View v){
 
     ShortIntent si = new ShortIntent(this);
     //si.message("8984511995","hello");
-    si.email("prashtechno@gmail.com","test","yo pk");
+    //si.email("prashtechno@gmail.com","test","yo pk");
     //si.call("8984511995");
+    //si.shareImage();
+
 }
 }

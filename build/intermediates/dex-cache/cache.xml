@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="C:\Users\Admin\AndroidStudioProjects\ShortRoid\app\build\intermediates\exploded-aar\shortroid.shortroid\shortroid\1.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="31b3e3db89fdc3799e777368cc95c9e78bd02230">
-        <dex dex="C:\Users\Admin\AndroidStudioProjects\ShortRoid\app\build\intermediates\pre-dexed\debug\shortroid.shortroid-shortroid-1.0.0_0ade7ba18f2b2675088bf432fe1000e5d7b67617.jar" />
-    </item>
-
-</items>
+<items version="2" />

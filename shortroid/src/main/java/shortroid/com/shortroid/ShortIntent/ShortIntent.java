@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
+import java.io.File;
+
 /**
  * Created by prashant on 20/7/16.
  */
@@ -69,6 +71,15 @@ public class ShortIntent {
         intent.putExtra(Intent.EXTRA_TEXT,body);
         _context.startActivity(Intent.createChooser(intent, "Send mail..."));
     }
+
+    public void shareImage(String path){
+        final Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("image/*");
+        final File photoFile = new File(_context.getFilesDir(), path);
+        shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(photoFile));
+        _context.startActivity(Intent.createChooser(shareIntent, "Share image using"));
+    }
+
 
 
 
