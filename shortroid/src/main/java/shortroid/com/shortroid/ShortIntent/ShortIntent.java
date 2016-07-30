@@ -3,6 +3,7 @@ package shortroid.com.shortroid.ShortIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.widget.Toast;
 
 import java.io.File;
 
@@ -72,6 +73,15 @@ public class ShortIntent {
         _context.startActivity(Intent.createChooser(intent, "Send mail..."));
     }
 
+    public void shareImage(Uri uri){
+
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("image/*");
+        sharingIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        _context.startActivity(Intent.createChooser(sharingIntent, "Share image using"));
+        Toast.makeText(_context,"Works",Toast.LENGTH_LONG).show();
+    }
+
     public void shareImage(String path){
         final Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("image/*");
@@ -79,6 +89,7 @@ public class ShortIntent {
         shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(photoFile));
         _context.startActivity(Intent.createChooser(shareIntent, "Share image using"));
     }
+
 
 
 

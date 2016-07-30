@@ -1,5 +1,6 @@
 package shortroid.com.shortroidlib;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -68,7 +69,8 @@ public void funct(View v){
     //si.message("8984511995","hello");
     //si.email("prashtechno@gmail.com","test","yo pk");
     //si.call("8984511995");
-    //si.shareImage();
+    Uri uri = Uri.parse("android.resource://shortroid.com.shortroidlib/drawable/ic_launcher.png");
+    si.shareImage(uri);
 
 }
 }
