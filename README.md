@@ -58,7 +58,9 @@ for(HashMap<String,String> hmap:list){
     // String name = hmap.get("NAME");
     // String key = hmap.get("KEY");
 
-    s = s+hmap.get("NAME")+" "+hmap.get("KEY")+" \n";
+    s = s + hmap.get("NAME") + " " + hmap.get("KEY") + " \n";
+    
+    
   }
 ```
  
