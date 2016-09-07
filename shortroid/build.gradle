@@ -13,7 +13,7 @@ ext {
     siteUrl='https://github.com/prashant2018/ShortRoid'
     gitUrl='https://github.com/prashant2018/ShortRoid.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'shortroid'
     developerName = 'ShortRoid'

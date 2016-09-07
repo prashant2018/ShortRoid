@@ -3,9 +3,15 @@ package shortroid.com.shortroidlib;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
+
+import java.util.HashMap;
+import java.util.List;
 
 import shortroid.com.shortroid.ShortIntent.ShortIntent;
+import shortroid.com.shortroid.ShortRoidDB.ShortRoidDB;
 import shortroid.com.shortroid.ShortRoidPreferences.ShortRoidPreferences;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+    /*
 
-        /*
         try {
             shortRoidPreferences=new ShortRoidPreferences(this,"Preferences");
         } catch (FileNameException e) {
@@ -28,24 +34,31 @@ public class MainActivity extends AppCompatActivity {
         Log.d("TAG",shortRoidPreferences.getPrefString("Example"));
 
 
+
         HashMap<String,String> attributes = new HashMap<>();
-
-        HashMap<String,Object> data = new HashMap<>();
-
         attributes.put("KEY","TEXT");
         attributes.put("NAME","TEXT");
-        ShortRoidDB sdb = new ShortRoidDB(MainActivity.this,"DATABASE_NAME",4,"TABLE_TEST",attributes);
 
+        HashMap<String,String> attributes1 = new HashMap<>();
+        attributes.put("KEY","TEXT");
+        attributes.put("NAME","TEXT");
+
+
+        ShortRoidDB sdb = new ShortRoidDB(MainActivity.this,"DATABASE_NAME",1,"TABLE_TEST",attributes);
+        ShortRoidDB sdb1 = new ShortRoidDB(MainActivity.this,"DATABASE_NAME",1,"TABLE_TEST",attributes);
         String update = "UPDATE TABLE_TEST SET KEY = 191 WHERE NAME=\"Rishabh\" ";
         System.out.println(sdb.anyQuery(update));
         TextView tv = (TextView)findViewById(R.id.text);
 
+        HashMap<String,Object> data = new HashMap<>();
         data.put("KEY",32);
         data.put("NAME","Saurabh");
         sdb.insert(data);
         data.put("KEY",41);
         data.put("NAME","Rishabh");
         sdb.insert(data);
+
+
         String q = "SELECT * FROM TABLE_TEST";
 
         List<HashMap<String,String>> list;
@@ -61,16 +74,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         tv.setText(s);
-    */
+*/
     }
+
 public void funct(View v){
 
     ShortIntent si = new ShortIntent(this);
     //si.message("8984511995","hello");
-    //si.email("prashtechno@gmail.com","test","yo pk");
+    si.email("prashtechno@gmail.com","test","yo pk");
     //si.call("8984511995");
-    Uri uri = Uri.parse("android.resource://shortroid.com.shortroidlib/drawable/ic_launcher.png");
-    si.shareImage(uri);
+    //Uri uri = Uri.parse("android.resource://shortroid.com.shortroidlib/"+R.drawable.ic_launcher);
+    //si.shareImage(uri);
 
 }
 }

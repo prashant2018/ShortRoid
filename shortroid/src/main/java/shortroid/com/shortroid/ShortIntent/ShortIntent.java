@@ -72,14 +72,13 @@ public class ShortIntent {
         intent.putExtra(Intent.EXTRA_TEXT,body);
         _context.startActivity(Intent.createChooser(intent, "Send mail..."));
     }
-
+    //TODO : sharing files
     public void shareImage(Uri uri){
-
         Intent sharingIntent = new Intent(Intent.ACTION_SEND);
         sharingIntent.setType("image/*");
         sharingIntent.putExtra(Intent.EXTRA_STREAM, uri);
         _context.startActivity(Intent.createChooser(sharingIntent, "Share image using"));
-        Toast.makeText(_context,"Works",Toast.LENGTH_LONG).show();
+        //Toast.makeText(_context,"Works",Toast.LENGTH_LONG).show();
     }
 
     public void shareImage(String path){
