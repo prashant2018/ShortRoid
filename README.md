@@ -97,6 +97,25 @@ ShortRoidPreferences shortRoidPreferences=new ShortRoidPreferences(context);
 //Use Get methods to get values (key) 
  shortRoidPreferences.getPrefString("Example");
 ```
+#ShortAnimation
+
+A library to integrate View Animation easily.
+
+###Usage
+
+```java
+/*Currently Available -
+->FadeInAnimation
+->FadeOutAnimation
+->RotateAnimation
+->ScaleAnimation
+->TranslateAnimation
+*/
+ShortAnimation.FadeInAnimation fadeInAnimation=new ShortAnimation.FadeInAnimation(view);
+//startAnimation() to start the animation(see all methods in ShortAnimation.java)
+fadeInAnimation.startAnimation();
+       
+```
 
 ##Developed By
 Prashant Kumar - https://github.com/prashant2018/ 
