@@ -8,7 +8,7 @@ ShortRoid being open source encourages contributers to contribute and make it mo
 Just add the following line to your apps gradle.build dependencies
 
 ```java
-compile 'shortroid.shortroid:shortroid:1.0.1'
+compile 'shortroid.shortroid:shortroid:1.0.2'
 ```
 
 Following is the documentation for the library. It will be modified as more classess are added.
