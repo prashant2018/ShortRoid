@@ -117,6 +117,34 @@ fadeInAnimation.startAnimation();
        
 ```
 
+#ShortRecyclerView
+
+A library to integrate RecyclerView functionality easily
+
+```java
+ShortRecyclerView recyclerView = (ShortRecyclerView) findViewById(id);
+
+//Add layout manager
+recyclerView.setLinearLayoutManager(this);
+/*GridLayoutManager and StaggeredGridLayoutManager also avialable
+  Parameters remain same as original LayoutManager classes */
+
+//Add click listeners
+recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+            }
+        }));
+
+//Add vertical spacing between items
+recyclerView.addVerticalSpace(space value);
+
+```
+
 ##Developed By
 Prashant Kumar - https://github.com/prashant2018/ 
 
