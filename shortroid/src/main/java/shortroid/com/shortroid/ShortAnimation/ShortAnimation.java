@@ -47,7 +47,10 @@ public class ShortAnimation {
         public int getRepeatMode() {
             return repeatMode;
         }
-
+        public void stopAnimation()
+        {
+            alphaAnimation.cancel();
+        }
         public void setRepeatMode(int repeatMode) {
             this.repeatMode = repeatMode;
             alphaAnimation.setRepeatMode(repeatMode);
@@ -191,7 +194,10 @@ public class ShortAnimation {
         public int getRepeatMode() {
             return repeatMode;
         }
-
+        public void stopAnimation()
+        {
+            alphaAnimation.cancel();
+        }
         public void setRepeatMode(int repeatMode) {
             this.repeatMode = repeatMode;
             alphaAnimation.setRepeatMode(repeatMode);
@@ -347,7 +353,10 @@ public class ShortAnimation {
         public int getRepeatMode() {
             return repeatMode;
         }
-
+        public void stopAnimation()
+        {
+            rotateAnimation.cancel();
+        }
         public void setRepeatMode(int repeatMode) {
             this.repeatMode = repeatMode;
             rotateAnimation.setRepeatMode(repeatMode);
@@ -504,7 +513,10 @@ public class ShortAnimation {
         public int getRepeatMode() {
             return repeatMode;
         }
-
+        public void stopAnimation()
+        {
+           scaleAnimation.cancel();
+        }
         public void setRepeatMode(int repeatMode) {
             this.repeatMode = repeatMode;
             scaleAnimation.setRepeatMode(repeatMode);
@@ -665,7 +677,10 @@ public class ShortAnimation {
         public int getRepeatCount() {
             return repeatCount;
         }
-
+        public void stopAnimation()
+        {
+            translateAnimation.cancel();
+        }
         public void setRepeatCount(int repeatCount) {
             this.repeatCount = repeatCount;
             translateAnimation.setRepeatCount(repeatCount);
