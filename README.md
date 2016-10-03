@@ -147,5 +147,8 @@ recyclerView.addVerticalSpace(space value);
 
 ##Contributors
 Prashant Kumar  - https://github.com/prashant2018/ 
+
 Mohit Badwal    - https://github.com/mohitbadwal/
+
 Subhrajyoti Sen - https://github.com/SubhrajyotiSen
+
