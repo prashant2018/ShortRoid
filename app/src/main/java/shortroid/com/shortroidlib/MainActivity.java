@@ -81,10 +81,11 @@ public void funct(View v){
 
     ShortIntent si = new ShortIntent(this);
     //si.message("8984511995","hello");
-    si.email("prashtechno@gmail.com","test","yo pk");
+    //si.email("prashtechno@gmail.com","test","yo pk");
     //si.call("8984511995");
-    //Uri uri = Uri.parse("android.resource://shortroid.com.shortroidlib/"+R.drawable.ic_launcher);
-    //si.shareImage(uri);
+
+    Uri uri = Uri.parse("android.resource://shortroid.com.shortroidlib/"+R.drawable.ic_launcher);
+    si.shareImage(uri);
 
 }
 }
