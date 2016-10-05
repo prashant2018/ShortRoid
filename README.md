@@ -8,7 +8,7 @@ ShortRoid being open source encourages contributers to contribute and make it mo
 Just add the following line to your apps gradle.build dependencies
 
 ```java
-compile 'shortroid.shortroid:shortroid:1.0.0'
+compile 'shortroid.shortroid:shortroid:1.0.2'
 ```
 
 Following is the documentation for the library. It will be modified as more classess are added.
@@ -97,8 +97,58 @@ ShortRoidPreferences shortRoidPreferences=new ShortRoidPreferences(context);
 //Use Get methods to get values (key) 
  shortRoidPreferences.getPrefString("Example");
 ```
+#ShortAnimation
 
-##Developed By
-Prashant Kumar - https://github.com/prashant2018/ 
+A library to integrate View Animation easily.
 
-Mohit Badwal - https://github.com/mohitbadwal/
+###Usage
+
+```java
+/*Currently Available -
+->FadeInAnimation
+->FadeOutAnimation
+->RotateAnimation
+->ScaleAnimation
+->TranslateAnimation
+*/
+ShortAnimation.FadeInAnimation fadeInAnimation=new ShortAnimation.FadeInAnimation(view);
+//startAnimation() to start the animation(see all methods in ShortAnimation.java)
+fadeInAnimation.startAnimation();
+       
+```
+
+#ShortRecyclerView
+
+A library to integrate RecyclerView functionality easily
+
+```java
+ShortRecyclerView recyclerView = (ShortRecyclerView) findViewById(id);
+
+//Add layout manager
+recyclerView.setLinearLayoutManager(this);
+/*GridLayoutManager and StaggeredGridLayoutManager also avialable
+  Parameters remain same as original LayoutManager classes */
+
+//Add click listeners
+recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+            }
+        }));
+
+//Add vertical spacing between items
+recyclerView.addVerticalSpace(space value);
+
+```
+
+##Contributors
+Prashant Kumar  - https://github.com/prashant2018/ 
+
+Mohit Badwal    - https://github.com/mohitbadwal/
+
+Subhrajyoti Sen - https://github.com/SubhrajyotiSen
+
