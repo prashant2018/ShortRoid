@@ -1,11 +1,23 @@
 package shortroid.com.shortroid.ShortIntent;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.net.Uri;
+import android.os.Environment;
+import android.util.DisplayMetrics;
+import android.view.View;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+import shortroid.com.shortroid.R;
 
 /**
  * Created by prashant on 20/7/16.
@@ -14,10 +26,11 @@ public class ShortIntent {
 
     private Context _context;
     public Intent intent;
+    public Activity activity;
 
-
-    public ShortIntent(Context context){
-        _context = context;
+    public ShortIntent(Activity activity){
+        _context = activity;
+        this.activity = activity;
 
     }
 
@@ -72,13 +85,13 @@ public class ShortIntent {
         intent.putExtra(Intent.EXTRA_TEXT,body);
         _context.startActivity(Intent.createChooser(intent, "Send mail..."));
     }
-    //TODO : sharing files
+
+    //TODO : sharing image
     public void shareImage(Uri uri){
         Intent sharingIntent = new Intent(Intent.ACTION_SEND);
         sharingIntent.setType("image/*");
         sharingIntent.putExtra(Intent.EXTRA_STREAM, uri);
         _context.startActivity(Intent.createChooser(sharingIntent, "Share image using"));
-        //Toast.makeText(_context,"Works",Toast.LENGTH_LONG).show();
     }
 
     public void shareImage(String path){
@@ -88,9 +101,6 @@ public class ShortIntent {
         shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(photoFile));
         _context.startActivity(Intent.createChooser(shareIntent, "Share image using"));
     }
+    //TODO : Add file sharing
+  }
 
-
-
-
-
-}
