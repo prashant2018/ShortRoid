@@ -144,6 +144,38 @@ recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationCont
 recyclerView.addVerticalSpace(space value);
 
 ```
+#ShortIntent
+
+```java
+
+ShortIntent shortIntent = new ShortIntent(this);
+// call
+shortIntent.call("898989xxxx");
+
+// message
+shortIntent.message("898989xxxx", "This is for testing");
+
+// email
+shortIntent.email("xyz@gmail.com", "sub", "body");
+shortIntent.email("xyz@gmail.com", "sub", "body", "cc");
+
+// shareImage
+shortIntent.shareImage(Uri uri);
+shortIntent.shareImage(String filePath);
+```
+
+#ShortScreenShot
+```java
+
+ShortScreenShot st = new ShortScreenShot(this);
+// with message
+st.share(R.id.layout_id_to_share,"Some message");
+
+//without message
+st.share(R.id.layout_id_to_share);
+
+```
+
 
 ##Contributors
 Prashant Kumar  - https://github.com/prashant2018/ 
