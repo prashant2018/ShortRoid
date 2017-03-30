@@ -1,10 +1,10 @@
 # ShortRoid
-##Android In Short
+## Android In Short
 
 ShortRoid Library makes it easier to use different functionalities of android. Main objective is to simplify android code and make the development process faster.
 ShortRoid being open source encourages contributers to contribute and make it more fun for the developers to develop android apps using ShortRoid.
 
-##Include ShortRoid 
+## Include ShortRoid 
 Just add the following line to your apps gradle.build dependencies
 
 ```java
@@ -13,13 +13,13 @@ compile 'shortroid.shortroid:shortroid:1.0.2'
 
 Following is the documentation for the library. It will be modified as more classess are added.
 
-##Documentation
+## Documentation
 
-#ShortroidDB
+# ShortroidDB
 
 An SqlLite library for integrating databases in applications.
 
-###Usage
+### Usage
 ```java
 //Attributes are the columns in database table
 HashMap<String,String> attributes = new HashMap<>();
@@ -35,7 +35,7 @@ ShortRoidDB shortdb = new ShortRoidDB(MainActivity.this,DATABASE_NAME,1,TABLE_NA
 
 ```
 
-###Inserting data - insert()
+### Inserting data - insert()
 ```java
 HashMap<String,Object> data = new HashMap<>();
 
@@ -47,7 +47,7 @@ data.put("KEY",2);
 data.put("NAME","Mohit");
 shortdb.insert(data);
 ```
-###Query data - query()
+### Query data - query()
 ```java
 // No need of cursors
 List< HashMap<String,String> > list;
@@ -64,7 +64,7 @@ for(HashMap<String,String> hmap:list){
   }
 ```
  
-###Updating database - anyQuery()
+### Updating database - anyQuery()
 
 ```java
 String query = "UPDATE table_name
@@ -74,7 +74,7 @@ String query = "UPDATE table_name
 shortdb.anyQuery(query)
 ```
 
-###AnyQuery i.e Delete, Update, Alter etc - anyQuery()
+### AnyQuery i.e Delete, Update, Alter etc - anyQuery()
 ```java
 String query = "DELETE FROM table_name
                 WHERE [condition];"
@@ -82,11 +82,11 @@ shortdb.anyQuery(query);
 
 ```
 
-#ShortRoidPreferences
+# ShortRoidPreferences
 
 A library to integrate SharedPreferences easily.
 
-###Usage
+### Usage
 
 ```java 
 ShortRoidPreferences shortRoidPreferences=new ShortRoidPreferences(context);
@@ -97,11 +97,11 @@ ShortRoidPreferences shortRoidPreferences=new ShortRoidPreferences(context);
 //Use Get methods to get values (key) 
  shortRoidPreferences.getPrefString("Example");
 ```
-#ShortAnimation
+# ShortAnimation
 
 A library to integrate View Animation easily.
 
-###Usage
+### Usage
 
 ```java
 /*Currently Available -
@@ -117,7 +117,7 @@ fadeInAnimation.startAnimation();
        
 ```
 
-#ShortRecyclerView
+# ShortRecyclerView
 
 A library to integrate RecyclerView functionality easily
 
@@ -144,7 +144,7 @@ recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationCont
 recyclerView.addVerticalSpace(space value);
 
 ```
-#ShortIntent
+# ShortIntent
 
 ```java
 
@@ -164,7 +164,7 @@ shortIntent.shareImage(Uri uri);
 shortIntent.shareImage(String filePath);
 ```
 
-#ShortScreenShot
+# ShortScreenShot
 ```java
 
 ShortScreenShot st = new ShortScreenShot(this);
@@ -177,7 +177,7 @@ st.share(R.id.layout_id_to_share);
 ```
 
 
-##Contributors
+## Contributors
 Prashant Kumar  - https://github.com/prashant2018/ 
 
 Mohit Badwal    - https://github.com/mohitbadwal/
