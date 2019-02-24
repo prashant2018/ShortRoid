@@ -15,6 +15,40 @@ Following is the documentation for the library. It will be modified as more clas
 
 ## Documentation
 
+# ShortRoidPreferences
+
+A library to integrate SharedPreferences easily.
+
+### Usage
+
+```java 
+ShortRoidPreferences shortRoidPreferences=new ShortRoidPreferences(context);
+
+//Use Set methods to put values (key,value)
+ shortRoidPreferences.setPrefString("Example","JustTesting");
+ 
+//Use Get methods to get values (key) 
+ shortRoidPreferences.getPrefString("Example");
+```
+# ShortAnimation
+
+A library to integrate View Animation easily.
+
+### Usage
+
+```java
+/*Currently Available -
+->FadeInAnimation
+->FadeOutAnimation
+->RotateAnimation
+->ScaleAnimation
+->TranslateAnimation
+*/
+ShortAnimation.FadeInAnimation fadeInAnimation=new ShortAnimation.FadeInAnimation(view);
+//startAnimation() to start the animation(see all methods in ShortAnimation.java)
+fadeInAnimation.startAnimation();
+       
+```
 # ShortroidDB
 
 An SqlLite library for integrating databases in applications.
@@ -80,41 +114,6 @@ String query = "DELETE FROM table_name
                 WHERE [condition];"
 shortdb.anyQuery(query);
 
-```
-
-# ShortRoidPreferences
-
-A library to integrate SharedPreferences easily.
-
-### Usage
-
-```java 
-ShortRoidPreferences shortRoidPreferences=new ShortRoidPreferences(context);
-
-//Use Set methods to put values (key,value)
- shortRoidPreferences.setPrefString("Example","JustTesting");
- 
-//Use Get methods to get values (key) 
- shortRoidPreferences.getPrefString("Example");
-```
-# ShortAnimation
-
-A library to integrate View Animation easily.
-
-### Usage
-
-```java
-/*Currently Available -
-->FadeInAnimation
-->FadeOutAnimation
-->RotateAnimation
-->ScaleAnimation
-->TranslateAnimation
-*/
-ShortAnimation.FadeInAnimation fadeInAnimation=new ShortAnimation.FadeInAnimation(view);
-//startAnimation() to start the animation(see all methods in ShortAnimation.java)
-fadeInAnimation.startAnimation();
-       
 ```
 
 # ShortRecyclerView
