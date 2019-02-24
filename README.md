@@ -30,6 +30,25 @@ ShortRoidPreferences shortRoidPreferences=new ShortRoidPreferences(context);
 //Use Get methods to get values (key) 
  shortRoidPreferences.getPrefString("Example");
 ```
+# ShortIntent
+
+```java
+
+ShortIntent shortIntent = new ShortIntent(this);
+// call
+shortIntent.call("898989xxxx");
+
+// message
+shortIntent.message("898989xxxx", "This is for testing");
+
+// email
+shortIntent.email("xyz@gmail.com", "sub", "body");
+shortIntent.email("xyz@gmail.com", "sub", "body", "cc");
+
+// shareImage
+shortIntent.shareImage(Uri uri);
+shortIntent.shareImage(String filePath);
+```
 # ShortAnimation
 
 A library to integrate View Animation easily.
@@ -65,7 +84,6 @@ attributes.put("NAME","TEXT NOT NULL");
 
 // Creating database and table. It only takes one line of code
 ShortRoidDB shortdb = new ShortRoidDB(MainActivity.this,DATABASE_NAME,1,TABLE_NAME,attributes);
-
 
 ```
 
@@ -143,26 +161,6 @@ recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationCont
 recyclerView.addVerticalSpace(space value);
 
 ```
-# ShortIntent
-
-```java
-
-ShortIntent shortIntent = new ShortIntent(this);
-// call
-shortIntent.call("898989xxxx");
-
-// message
-shortIntent.message("898989xxxx", "This is for testing");
-
-// email
-shortIntent.email("xyz@gmail.com", "sub", "body");
-shortIntent.email("xyz@gmail.com", "sub", "body", "cc");
-
-// shareImage
-shortIntent.shareImage(Uri uri);
-shortIntent.shareImage(String filePath);
-```
-
 # ShortScreenShot
 ```java
 
